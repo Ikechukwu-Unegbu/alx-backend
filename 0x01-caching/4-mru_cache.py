@@ -18,13 +18,13 @@ class MRUCache(BaseCaching):
 
     def put(self, key, item):
         """
-        Cache a key-value pair
+        Method to cache a key-value pair
         """
         if key is None or item is None:
             pass
         else:
-            cache_length = len(self.cache_data)
-            if cache_length >= BaseCaching.MAX_ITEMS and key not in self.cache_data:
+            cachelength = len(self.cache_data)
+            if cachelength >= BaseCaching.MAX_ITEMS and key not in self.cache_data:
                 print("DISCARD: {}".format(self.usage[-1]))
                 del self.cache_data[self.usage[-1]]
                 del self.usage[-1]
