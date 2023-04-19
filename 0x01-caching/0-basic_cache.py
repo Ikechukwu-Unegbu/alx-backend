@@ -8,8 +8,8 @@ class BasicCache(BaseCaching):
     """
     This class defines methods for caching information in key-value
     Methods:
-        put(key, item) - key and value pair to cache
-        get(key) - method to retriev value of a key
+        put(key, item) - method to cache key value pair
+        get(key) - method to retriev value of given key
     """
 
     def __init__(self):
