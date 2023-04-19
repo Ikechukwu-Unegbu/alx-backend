@@ -1,26 +1,26 @@
 #!/usr/bin/env python3
-"""BaseCaching task file
+""" First task file
 """
 from base_caching import BaseCaching
 
 
 class BasicCache(BaseCaching):
     """
-    This class defines methods for caching information in key-value
-    Methods:
-        put(key, item) - method to cache key value pair
-        get(key) - method to retriev value of given key
+    Defines a class for caching information in key-value pairs
     """
 
     def __init__(self):
         """
-        Init the class with parent class init method
+        Initialize the class with the parent class __init__ method
         """
         BaseCaching.__init__(self)
 
     def put(self, key, item):
         """
-        This method stores a key value-pair
+        Method to store a key-value pair
+        Args:
+            Key
+            Item
         """
         if key is None or item is None:
             pass
@@ -29,9 +29,8 @@ class BasicCache(BaseCaching):
 
     def get(self, key):
         """
-        Returns value linked to a key if the key exists.
+        Return value of given key or none.
         """
         if key is not None and key in self.cache_data.keys():
             return self.cache_data[key]
         return None
-
