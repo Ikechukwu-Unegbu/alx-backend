@@ -1,30 +1,30 @@
 #!/usr/bin/env python3
-""" lifo cache task file.
+""" Fifo caching file
 """
 from base_caching import BaseCaching
 
 
 class LIFOCache(BaseCaching):
     """
-    FIFOCache class define fifo based cache methods
+    FIFOCache defines a FIFO caching methods.
     """
 
     def __init__(self):
         """
-        Init the class with parent class init method
+        Init the class with super class init method
         """
         super().__init__()
         self.order = []
 
     def put(self, key, item):
         """
-        Method to cache a key-value pair.
+        Method to cache a key-value pair
         """
         if key is None or item is None:
             pass
         else:
-            len = len(self.cache_data)
-            if len >= BaseCaching.MAX_ITEMS and key not in self.cache_data:
+            length = len(self.cache_data)
+            if length >= BaseCaching.MAX_ITEMS and key not in self.cache_data:
                 print("DISCARD: {}".format(self.order[-1]))
                 del self.cache_data[self.order[-1]]
                 del self.order[-1]
@@ -35,9 +35,8 @@ class LIFOCache(BaseCaching):
 
     def get(self, key):
         """
-        Return the value linked to a given key, or None
+        Return value of key or NONE
         """
         if key is not None and key in self.cache_data.keys():
             return self.cache_data[key]
         return None
-
