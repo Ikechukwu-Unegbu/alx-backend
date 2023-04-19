@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-""" BaseCaching task file
+"""BaseCaching task file
 """
 from base_caching import BaseCaching
 
