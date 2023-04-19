@@ -6,7 +6,7 @@ from base_caching import BaseCaching
 
 class MRUCache(BaseCaching):
     """
-    MRUCache defines a MRU caching put and get methods.
+    MRUCache defines a MRU caching methods.
     """
 
     def __init__(self):
