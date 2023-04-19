@@ -1,17 +1,17 @@
 #!/usr/bin/env python3
-""" Bonus task module
+""" LFU Module
 """
 from base_caching import BaseCaching
 
 
 class LFUCache(BaseCaching):
     """
-    FIFOCache defines a FIFO caching system
+    LFUCache defines a LFU caching system
     """
 
     def __init__(self):
         """
-        Init the class with init of super class
+        Initialize the class with the parent's init method
         """
         super().__init__()
         self.usage = []
@@ -19,13 +19,13 @@ class LFUCache(BaseCaching):
 
     def put(self, key, item):
         """
-        Method to save cache as key-value pair
+        Method to cache a key-value pair
         """
         if key is None or item is None:
             pass
         else:
-            cachelength = len(self.cache_data)
-            if cachelength >= BaseCaching.MAX_ITEMS and key not in self.cache_data:
+            length = len(self.cache_data)
+            if length >= BaseCaching.MAX_ITEMS and key not in self.cache_data:
                 lfu = min(self.frequency.values())
                 lfu_keys = []
                 for k, v in self.frequency.items():
@@ -56,7 +56,7 @@ class LFUCache(BaseCaching):
 
     def get(self, key):
         """
-        Get value of key or NONE
+        Get the value of a key or NONE.
         """
         if key is not None and key in self.cache_data.keys():
             del self.usage[self.usage.index(key)]
