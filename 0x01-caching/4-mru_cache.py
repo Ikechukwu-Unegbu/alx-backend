@@ -1,30 +1,30 @@
 #!/usr/bin/env python3
-""" MRU based caching module.
+""" MRU caching files
 """
 from base_caching import BaseCaching
 
 
 class MRUCache(BaseCaching):
     """
-    MRUcache class defines mru based methods.
+    MRUCache defines a MRU caching put and get methods.
     """
 
     def __init__(self):
         """
-        Init the class. Along with super class init method
+        Init the class with the super class.
         """
         super().__init__()
         self.usage = []
 
     def put(self, key, item):
         """
-        Cache method for a key-value pair
+        Cache a key-value pair
         """
         if key is None or item is None:
             pass
         else:
-            len = len(self.cache_data)
-            if len >= BaseCaching.MAX_ITEMS and key not in self.cache_data:
+            cache_length = len(self.cache_data)
+            if cache_length >= BaseCaching.MAX_ITEMS and key not in self.cache_data:
                 print("DISCARD: {}".format(self.usage[-1]))
                 del self.cache_data[self.usage[-1]]
                 del self.usage[-1]
@@ -35,7 +35,7 @@ class MRUCache(BaseCaching):
 
     def get(self, key):
         """
-        Get key val or none
+        Return the value of given key, or None
         """
         if key is not None and key in self.cache_data.keys():
             del self.usage[self.usage.index(key)]
