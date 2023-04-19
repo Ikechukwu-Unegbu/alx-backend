@@ -31,8 +31,6 @@ class FIFOCache(BaseCaching):
             self.order.append(key)
             self.cache_data[key] = item
 
-
-
     def get(self, key):
         """
         Return the value linked to a given key, or None
