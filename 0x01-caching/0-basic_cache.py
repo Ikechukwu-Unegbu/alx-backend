@@ -18,7 +18,6 @@ class BasicCache(BaseCaching):
     def put(self, key, item):
         """
         Method to store a key-value pair
-        
         """
         if key is None or item is None:
             pass
